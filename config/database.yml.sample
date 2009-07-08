@@ -1,0 +1,13 @@
+defaults: &defaults
+  adapter: mysql
+  username: root
+  password: 
+  host: 127.0.0.1
+
+development:
+  <<: *defaults
+  database: yojak_development
+
+test:
+  <<: *defaults
+  database: yojak_test
