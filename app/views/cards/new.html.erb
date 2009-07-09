@@ -1,0 +1,12 @@
+<% @title = "Create New Card" %>
+<h1>New card</h1>
+
+<% form_for(@card) do |f| %>
+  <%= f.error_messages %>
+  <%= render :partial => "form", :locals => {:form => f} %>
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', cards_path %>

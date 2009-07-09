@@ -1,0 +1,8 @@
+<% @title = "##{@card.id}: #{@card.title}" %>
+<div class="card_title">#<%= @card.id %>: <%= @card.title %></div>
+<div>
+  <%= to_html @card.description %>
+</div>
+<%= @card.status %>
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>
