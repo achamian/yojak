@@ -1,7 +1,7 @@
-<% title "Create New Card" %>
-<h1>New card</h1>
+<% title = "Create New Project" %>
+<h1>New Project</h1>
 
-<% form_for(@card) do |f| %>
+<% form_for(@project) do |f| %>
   <%= f.error_messages %>
   <%= render :partial => "form", :locals => {:form => f} %>
   <p>
@@ -9,4 +9,4 @@
   </p>
 <% end %>
 
-<%= link_to 'Back', cards_path %>
+<%= link_to 'Back', projects_path %>
