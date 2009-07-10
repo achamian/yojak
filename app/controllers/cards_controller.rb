@@ -8,7 +8,7 @@ class CardsController < ApplicationController
   end
 
   def new
-    @card = Card.new
+    @card = Card.new(:project_id => params[:project_id])
   end
 
   def edit
@@ -17,9 +17,10 @@ class CardsController < ApplicationController
 
   def create
     @card = Card.new(params[:card])
+    @card.project_id = params[:project_id]
     if @card.save
       flash[:notice] = 'Card was successfully created.'
-      redirect_to(@card)
+      redirect_to(@card.project)
     else
       render :action => "new"
     end
@@ -30,7 +31,7 @@ class CardsController < ApplicationController
 
     if @card.update_attributes(params[:card])
       flash[:notice] = 'Card was successfully updated.'
-      redirect_to(@card)
+      redirect_to(@card.project)
     else
       render :action => "edit"
     end
@@ -39,6 +40,6 @@ class CardsController < ApplicationController
   def destroy
     @card = Card.find(params[:id])
     @card.destroy
-    redirect_to(cards_url)
+    redirect_to(@card.project)
   end
 end

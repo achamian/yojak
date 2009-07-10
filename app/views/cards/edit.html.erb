@@ -1,7 +1,7 @@
 <% title "##{@card.id}: #{@card.title}" %>
 <h1>Editing card</h1>
 
-<% form_for(@card) do |f| %>
+<% form_for(@card, :url => project_card_path(@card.project_id, @card), :method => :post) do |f| %>
   <%= f.error_messages %>
   <%= render :partial => "form", :locals => {:form => f} %>
   <p>
@@ -9,5 +9,5 @@
   </p>
 <% end %>
 
-<%= link_to 'Show', @card %> |
-<%= link_to 'Back', cards_path %>
+<%= link_to 'Show', project_card_path(@card.project, @card) %> |
+<%= link_to 'Back', project_path(@card.project) %>

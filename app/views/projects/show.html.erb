@@ -1,4 +1,5 @@
 <% title = "Project #{@project.name}" %>
 <div class="card_title">#<%= @project.name %></div>
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= render :partial => "cards/index", :locals => {:cards => @project.cards} %>
+<%= link_to "Add New Card", new_project_card_path(@project) %>
+<%= link_to 'All Projects', projects_path %>

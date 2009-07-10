@@ -4,5 +4,5 @@
   <%= to_html @card.description %>
 </div>
 <%= @card.status %>
-<%= link_to 'Edit', edit_card_path(@card) %> |
-<%= link_to 'Back', cards_path %>
+<%= link_to 'Edit', edit_project_card_path(@card.project, @card) %> |
+<%= link_to 'Back', project_path(@card.project) %>
