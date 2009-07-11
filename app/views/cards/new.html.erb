@@ -1,5 +1,4 @@
 <% title "Create New Card" %>
-<h1>New card</h1>
 
 <% form_for(@card, :url => project_cards_path(@card.project_id)) do |f| %>
   <%= f.error_messages %>

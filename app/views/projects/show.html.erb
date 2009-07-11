@@ -1,5 +1,6 @@
-<% title = "Project #{@project.name}" %>
-<div class="card_title">#<%= @project.name %></div>
-<%= render :partial => "cards/index", :locals => {:cards => @project.cards} %>
-<%= link_to "Add New Card", new_project_card_path(@project) %>
+<% title "Project #{@project.name}" %>
+<div>
+  <%= render :partial => "cards/index", :locals => {:cards => @project.cards} %>
+</div>
+<%= link_to "Add New Card", new_project_card_path(@project) %> |
 <%= link_to 'All Projects', projects_path %>
