@@ -1,4 +1,6 @@
 class CardsController < ApplicationController
+  before_filter :available_card_statuses, :only => [:new, :edit]
+
   def index
     @cards = Card.all
   end
@@ -41,5 +43,9 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
     @card.destroy
     redirect_to(@card.project)
+  end
+  
+  def available_card_statuses
+    @card_statuses = CardStatus.find_all_by_project_id(params[:project_id])
   end
 end

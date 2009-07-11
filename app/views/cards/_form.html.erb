@@ -9,6 +9,6 @@
   </li>
   <li>
     <lable>Status</lable>
-    <%= form.text_field :status %>
+    <%= form.select :status, card_statuses.collect(&:status) , {:include_blank => true} %>
   </li>
 </ul>

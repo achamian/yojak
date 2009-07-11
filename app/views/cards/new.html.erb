@@ -2,7 +2,7 @@
 
 <% form_for(@card, :url => project_cards_path(@card.project_id)) do |f| %>
   <%= f.error_messages %>
-  <%= render :partial => "form", :locals => {:form => f} %>
+  <%= render :partial => "form", :locals => {:form => f, :card_statuses => @card_statuses} %>
   <p>
     <%= f.submit 'Create' %>
   </p>
