@@ -1,0 +1,7 @@
+<li>
+  <% form_for(card_status, :url => project_card_status_path(card_status.project_id, card_status), :method => :post) do |f| %>
+    <%= f.text_field :status %>
+    <%= f.submit 'Update' %>
+  <% end %>
+  <%= link_to 'Destroy', project_card_status_path(@project, card_status), :confirm => 'Are you sure?', :method => :delete %>
+</li>

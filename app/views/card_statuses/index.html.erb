@@ -1,0 +1,7 @@
+<% title "Card Statuses for #{@project.name}" %>
+
+<ul id="card_statuses">
+  <%= render :partial => "card_status", :collection => @card_statuses %>
+</ul>
+<%= add_card_status %>
+<%= link_to "Back", project_administration_path(:project_id => @project.id) %>

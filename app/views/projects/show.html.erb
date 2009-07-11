@@ -3,4 +3,5 @@
   <%= render :partial => "cards/index", :locals => {:cards => @project.cards} %>
 </div>
 <%= link_to "Add New Card", new_project_card_path(@project) %> |
-<%= link_to 'All Projects', projects_path %>
+<%= link_to 'All Projects', projects_path %> |
+<%= link_to "Project Administration", project_administration_path(:project_id => @project.id) %>
