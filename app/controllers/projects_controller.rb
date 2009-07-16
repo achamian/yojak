@@ -17,7 +17,6 @@ class ProjectsController < ApplicationController
 
   def create
     @project = Project.new(params[:project])
-    p @project.name
     if @project.save
       flash[:notice] = 'Project was successfully created.'
       redirect_to(@project)
@@ -40,6 +39,6 @@ class ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
-    redirect_to(cards_url)
+    redirect_to(projects_url)
   end
 end
